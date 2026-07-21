@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rodrigo Morelli — banjo e samba. Curso, loja de instrumentos, regulagem e shows.">
+<meta property="og:title" content="Rodrigo Morelli — O banjo tem um nome">
+<meta property="og:description" content="Prévia do site: curso de banjo, loja de instrumentos, regulagem e Encontro de Banjeiros.">
+<meta property="og:image" content="assets/rm1.jpg">
+<meta property="og:type" content="website">
+<title>Rodrigo Morelli — Banjo e Samba | Curso, Loja, Shows e Regulagem</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000; --panel:#0B0B0B; --panel2:#111; --line:#242424;
+  --white:#fff; --muted:#8C8C8C; --muted2:#B8B8B8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--white);font-family:'Archivo',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.05;letter-spacing:-.02em;font-weight:900}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.protonote{background:#141414;border-bottom:1px solid var(--line);padding:9px 24px;font-size:11.5px;color:var(--muted);letter-spacing:.3px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:60;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.nav-in img{height:34px;filter:none}
+.nav-links{display:flex;gap:26px;font-size:13.5px;font-weight:500;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em}
+.nav-links a{padding:4px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#fff;border-bottom-color:#fff}
+.btn{display:inline-block;background:var(--white);color:#000;font-weight:700;padding:13px 24px;font-size:13px;text-transform:uppercase;letter-spacing:.07em;transition:.15s;border:1px solid #fff}
+.btn:hover{background:#000;color:#fff}
+.btn-ghost{background:transparent;color:#fff;border:1px solid #3a3a3a}
+.btn-ghost:hover{background:#fff;color:#000;border-color:#fff}
+.btn-sm{padding:10px 18px;font-size:11.5px}
+@media(max-width:960px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px;min-height:82vh}
+.hero-txt{padding:70px 0}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:22px}
+.hero h1{font-size:clamp(52px,8.5vw,104px);text-transform:uppercase}
+.hero .sub{font-size:clamp(17px,2.1vw,23px);color:var(--muted2);margin-top:20px;max-width:480px;font-weight:400}
+.cta-row{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.cred{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);max-width:620px;letter-spacing:.02em}
+.cred b{color:#fff;font-weight:600}
+.hero-img{position:relative;align-self:end}
+.hero-img img{width:100%;object-fit:cover}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;min-height:auto}.hero-img{display:none}}
+
+/* NUMEROS */
+.nums{border-bottom:1px solid var(--line);background:var(--panel)}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.num{padding:46px 16px;border-right:1px solid var(--line);text-align:center}
+.num:last-child{border-right:none}
+.num .n{font-size:clamp(32px,4.6vw,50px);font-weight:900;line-height:1;letter-spacing:-.03em}
+.num .l{font-size:11px;color:var(--muted);margin-top:12px;text-transform:uppercase;letter-spacing:.14em}
+@media(max-width:720px){.nums-grid{grid-template-columns:1fr 1fr}.num{border-bottom:1px solid var(--line)}.num:nth-child(2n){border-right:none}}
+
+/* SECOES */
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+.sec-label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:18px}
+h2{font-size:clamp(34px,5vw,58px);text-transform:uppercase;margin-bottom:20px}
+h3{font-size:22px;margin-bottom:10px}
+.lead{color:var(--muted2);font-size:16.5px;max-width:620px;font-weight:400}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.two{grid-template-columns:1fr;gap:36px}section{padding:64px 0}}
+
+/* CURSO */
+.bullets{list-style:none;margin-top:30px}
+.bullets li{padding:13px 0 13px 30px;position:relative;border-top:1px solid var(--line);font-size:15px;color:var(--muted2)}
+.bullets li:last-child{border-bottom:1px solid var(--line)}
+.bullets li::before{content:'';position:absolute;left:0;top:22px;width:14px;height:1px;background:#fff}
+.price{margin-top:30px}
+.price .v{font-size:42px;font-weight:900;letter-spacing:-.03em}
+.price .c{color:var(--muted);font-size:13px;display:block;margin-top:4px}
+.vsl{background:var(--panel2);border:1px solid var(--line);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#4a4a4a;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.play{width:64px;height:64px;border:1px solid #3a3a3a;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.play::after{content:'';border-left:14px solid #666;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+
+/* LOJA */
+#loja{background:var(--panel)}
+.shop-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.chip{border:1px solid var(--line);padding:9px 16px;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);cursor:pointer;transition:.15s;background:none;font-family:inherit}
+.chip:hover{border-color:#fff;color:#fff}
+.chip.on{background:#fff;color:#000;border-color:#fff;font-weight:700}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prod{background:#000;border:1px solid var(--line);display:flex;flex-direction:column;transition:.18s}
+.prod:hover{border-color:#5a5a5a;transform:translateY(-3px)}
+.prod-img{aspect-ratio:4/5;overflow:hidden;background:#0d0d0d;position:relative}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:#fff;color:#000;font-size:9.5px;font-weight:700;padding:5px 9px;text-transform:uppercase;letter-spacing:.1em}
+.tag.out{background:#2a2a2a;color:#999}
+.prod-body{padding:18px;display:flex;flex-direction:column;flex:1}
+.prod-cat{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;margin-bottom:7px}
+.prod-name{font-size:15.5px;font-weight:700;line-height:1.25;margin-bottom:auto}
+.prod-price{font-size:21px;font-weight:900;margin:16px 0 12px;letter-spacing:-.02em}
+.prod-price small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:0}
+@media(max-width:1000px){.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid4{grid-template-columns:1fr}}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.trust div{background:#000;padding:24px 18px;text-align:center}
+.trust b{display:block;font-size:13px;margin-bottom:5px}
+.trust span{font-size:11.5px;color:var(--muted)}
+@media(max-width:820px){.trust{grid-template-columns:1fr 1fr}}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.card{background:#000;padding:38px}
+.card .k{font-size:44px;font-weight:900;display:block;margin-bottom:10px;letter-spacing:-.03em}
+.card p{color:var(--muted2);font-size:14.5px;margin-bottom:20px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+
+/* GALERIA BANJO */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}}
+
+/* DISCOS */
+.discos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px}
+.discos img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line)}
+.discos .empty{aspect-ratio:1;border:1px dashed #2e2e2e;display:flex;align-items:center;justify-content:center;color:#3d3d3d;font-size:10px;text-align:center;padding:10px;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:760px){.discos{grid-template-columns:1fr 1fr 1fr}}
+
+/* SPONSORS */
+.sponsors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.sponsors div{background:#000;padding:30px;display:flex;align-items:center;justify-content:center;min-height:120px}
+.sponsors img{max-height:56px;width:auto;object-fit:contain;opacity:.75;transition:.2s}
+.sponsors div:hover img{opacity:1}
+@media(max-width:760px){.sponsors{grid-template-columns:1fr 1fr}}
+
+/* FOOTER */
+footer{padding:72px 0 40px;background:var(--panel)}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:600}
+footer li{list-style:none;color:var(--muted2);font-size:14px;padding:5px 0}
+.news{display:flex;margin-top:16px;max-width:380px}
+.news input{flex:1;background:#000;border:1px solid var(--line);border-right:none;color:#fff;padding:13px;font-size:14px;font-family:inherit}
+.f-bottom{margin-top:54px;padding-top:26px;border-top:1px solid var(--line);color:#555;font-size:11.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;letter-spacing:.05em}
+@media(max-width:880px){.f-grid{grid-template-columns:1fr 1fr;gap:32px}}
+</style>
+</head>
+<body>
+
+<div class="protonote">PROTÓTIPO — RODRIGO MORELLI · Versão de avaliação. Textos são finais; preços e blocos tracejados são placeholders.</div>
+
+<nav><div class="wrap nav-in">
+  <a href="#"><img src="assets/logo.jpg" alt="Rodrigo Morelli"></a>
+  <div class="nav-links">
+    <a href="#curso">Curso</a><a href="#loja">Loja</a><a href="#sobre">Sobre</a><a href="#banjos">Regulagem</a><a href="#musica">Música</a><a href="#contato">Contato</a>
+  </div>
+  <a href="#curso" class="btn btn-sm">Aprender banjo</a>
+</div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div class="hero-txt">
+    <div class="eyebrow">Samba paulista desde 1990</div>
+    <h1>O banjo<br>tem um<br>nome.</h1>
+    <p class="sub">Rodrigo Morelli — 450 composições, 800 banjos regulados e três décadas de roda.</p>
+    <div class="cta-row">
+      <a href="#curso" class="btn">Aprenda banjo comigo</a>
+      <a href="#loja" class="btn btn-ghost">Ver a loja</a>
+    </div>
+    <div class="cred">Tocou com <b>Almir Guineto</b> · <b>Arlindo Cruz</b> · <b>Beth Carvalho</b> · <b>Jorge Aragão</b> · <b>Jovelina Pérola Negra</b> · <b>Monarco</b> · <b>Reinaldo</b> · <b>Só Pra Contrariar</b></div>
+  </div>
+  <div class="hero-img"><img src="assets/rm1.jpg" alt="Rodrigo Morelli com seu banjo"></div>
+</div></header>
+
+<div class="nums"><div class="nums-grid">
+  <div class="num"><div class="n">450+</div><div class="l">composições</div></div>
+  <div class="num"><div class="n">800+</div><div class="l">banjos regulados</div></div>
+  <div class="num"><div class="n">22 mil</div><div class="l">seguidores</div></div>
+  <div class="num"><div class="n">1,1 mi</div><div class="l">views no YouTube</div></div>
+</div></div>
+
+<!-- CURSO -->
+<section id="curso"><div class="wrap two">
+  <div>
+    <div class="sec-label">Curso online · do zero ao avançado</div>
+    <h2>Do primeiro acorde ao samba de verdade</h2>
+    <p class="lead">Não existe curso de banjo para samba feito por quem realmente vive do instrumento. Este existe. Do zero absoluto ao nível de roda profissional, com quem regulou 800 banjos e dividiu palco com Beth Carvalho.</p>
+    <ul class="bullets">
+      <li>Sua primeira levada de samba na primeira semana</li>
+      <li>Partido alto, samba de roda e pagode — as batidas que abrem portas</li>
+      <li>Acompanhar qualquer sambista sem ensaio prévio</li>
+      <li>Ouvido treinado para entrar em roda sem conhecer a música</li>
+      <li>Acesso vitalício e contato direto com o Rodrigo</li>
+    </ul>
+    <div class="price"><span class="v">R$ [ — ]</span><span class="c">Em até 12x · Garantia incondicional de 7 dias</span></div>
+    <div class="cta-row"><a href="#" class="btn">Ver a grade completa</a></div>
+  </div>
+  <div class="vsl"><div class="play"></div>Vídeo de vendas · 2 a 3 min</div>
+</div></section>
+
+<!-- LOJA -->
+<section id="loja"><div class="wrap">
+  <div class="shop-head">
+    <div>
+      <div class="sec-label">Loja oficial</div>
+      <h2>Instrumentos<br>e acessórios</h2>
+      <p class="lead" style="margin-top:16px">Banjos assinados, regulados e testados por Rodrigo antes de sair. Cada instrumento sai da loja pronto para tocar — não é caixa de fábrica, é instrumento preparado.</p>
+    </div>
+    <a href="#contato" class="btn btn-ghost">Falar com um especialista</a>
+  </div>
+
+  <div class="filters">
+    <button class="chip on">Todos</button>
+    <button class="chip">Banjos</button>
+    <button class="chip">Acessórios</button>
+    <button class="chip">Peças e captação</button>
+    <button class="chip">Cursos</button>
+    <button class="chip">Vestuário</button>
+  </div>
+
+  <div class="grid4">
+    <div class="prod">
+      <div class="prod-img"><span class="tag">Assinatura</span><img src="assets/banjo1.jpg" alt="Banjo Irineu Modelo Rodrigo Morelli"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Banjo · Luthieria Irineu</div>
+        <div class="prod-name">Banjo Irineu — Modelo Rodrigo Morelli</div>
+        <div class="prod-price">R$ [ — ]<small>12x sem juros · regulado por Rodrigo</small></div>
+        <a href="#" class="btn btn-sm">Comprar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><img src="assets/banjo3.jpg" alt="Banjo Irineu"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Banjo · Luthieria Irineu</div>
+        <div class="prod-name">Banjo Irineu — Linha Intermediária</div>
+        <div class="prod-price">R$ [ — ]<small>12x sem juros</small></div>
+        <a href="#" class="btn btn-sm">Comprar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><span class="tag">Serviço</span><img src="assets/banjo4.jpg" alt="Regulagem de banjo"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Serviço · Oficina</div>
+        <div class="prod-name">Regulagem completa do seu banjo</div>
+        <div class="prod-price">R$ [ — ]<small>Presencial em SP ou envio pelos Correios</small></div>
+        <a href="#" class="btn btn-sm">Agendar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><span class="tag">Mais vendido</span><img src="assets/banjo5.jpg" alt="Kit de acessórios"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Acessório</div>
+        <div class="prod-name">Kit Banjeiro — palhetas, encordoamento e chave</div>
+        <div class="prod-price">R$ [ — ]<small>Frete grátis acima de R$ [ — ]</small></div>
+        <a href="#" class="btn btn-sm">Comprar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><img src="assets/sp-schaffiman.png" alt="Captador Schaffiman" style="object-fit:contain;padding:28px;background:#0d0d0d"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Captação · Schaffiman</div>
+        <div class="prod-name">Captador para banjo — indicação Rodrigo Morelli</div>
+        <div class="prod-price">R$ [ — ]<small>Instalação opcional</small></div>
+        <a href="#" class="btn btn-sm">Comprar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><img src="assets/sp-contemporanea.png" alt="Percussão Contemporânea" style="object-fit:contain;padding:28px;background:#0d0d0d"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Percussão · Contemporânea</div>
+        <div class="prod-name">Linha de percussão para roda de samba</div>
+        <div class="prod-price">R$ [ — ]<small>Vários modelos</small></div>
+        <a href="#" class="btn btn-sm">Ver modelos</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><span class="tag">Tarraxas</span><img src="assets/banjo2.jpg" alt="Tarraxas V Stuners"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Peças · V Stuners</div>
+        <div class="prod-name">Jogo de tarraxas para banjo</div>
+        <div class="prod-price">R$ [ — ]<small>Instalação opcional</small></div>
+        <a href="#" class="btn btn-sm">Comprar</a>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img"><span class="tag">Digital</span><img src="assets/logo-encontro.jpg" alt="Curso de banjo"></div>
+      <div class="prod-body">
+        <div class="prod-cat">Produto digital</div>
+        <div class="prod-name">Curso de Banjo — do zero ao avançado</div>
+        <div class="prod-price">R$ [ — ]<small>Acesso vitalício · 12x</small></div>
+        <a href="#curso" class="btn btn-sm">Ver curso</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div><b>Regulado antes de enviar</b><span>Nenhum instrumento sai sem passar pela bancada do Rodrigo</span></div>
+    <div><b>Envio para todo o Brasil</b><span>Embalagem reforçada e seguro incluso</span></div>
+    <div><b>7 dias para devolver</b><span>Não gostou do som? Devolvemos o valor</span></div>
+    <div><b>Suporte de quem toca</b><span>Dúvida técnica respondida por músico, não por atendente</span></div>
+  </div>
+</div></section>
+
+<!-- SOBRE -->
+<section id="sobre"><div class="wrap two">
+  <div><img src="assets/rm2.jpg" alt="Rodrigo Morelli" style="width:100%;border:1px solid var(--line)"></div>
+  <div>
+    <div class="sec-label">Quem é</div>
+    <h2>Do quintal ao palco</h2>
+    <p class="lead">Rodrigo Morelli começou onde o samba paulista sempre começou: na roda. Início dos anos 1990, ao lado do pai e do avô, aprendendo por observação o que nenhuma escola ensina — o tempo, a levada, o silêncio certo.</p>
+    <p class="lead" style="margin-top:18px">O que era herança familiar virou ofício, e o ofício virou assinatura. No banjo, desenvolveu uma sonoridade que músicos reconhecem antes de saber quem está tocando. Jornalista formado pela Universidade São Marcos, é autor de <i>O Samba Paulista Como Realmente É</i> — livro que rendeu uma entrevista de uma hora com Arlindo Cruz.</p>
+    <div class="cta-row"><a href="#" class="btn btn-ghost">Biografia completa</a></div>
+  </div>
+</div></section>
+
+<!-- REGULAGEM -->
+<section id="banjos"><div class="wrap">
+  <div class="sec-label">Oficina</div>
+  <h2>O ecossistema<br>do banjo</h2>
+  <p class="lead">Rodrigo não só toca banjo. Ele regula, desenvolve e assina o instrumento.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="k">800+</span>
+      <h3>Regulagem de banjos</h3>
+      <p>Referência técnica nacional em regulagem e preparação: altura de ação, tensão de pele, timbre, captação e ajuste de braço. O mesmo trabalho feito nos instrumentos que sobem ao palco com ele.</p>
+      <a href="#loja" class="btn btn-ghost btn-sm">Agendar regulagem</a>
+    </div>
+    <div class="card">
+      <span class="k">Assinatura</span>
+      <h3>Banjo Irineu — Modelo Rodrigo Morelli</h3>
+      <p>Desenvolvido com a Luthieria Irineu a partir de especificações próprias, com identidade sonora alinhada ao estilo de execução de Rodrigo. Produção limitada.</p>
+      <a href="#loja" class="btn btn-ghost btn-sm">Ver na loja</a>
+    </div>
+  </div>
+  <div class="gal">
+    <img src="assets/banjo1.jpg" alt="Banjo Irineu Modelo Rodrigo Morelli — frente">
+    <img src="assets/banjo2.jpg" alt="Banjo — detalhe">
+    <img src="assets/banjo3.jpg" alt="Banjo — detalhe do aro">
+    <img src="assets/banjo5.jpg" alt="Banjo — detalhe do braço">
+  </div>
+</div></section>
+
+<!-- ENCONTRO -->
+<section id="encontro"><div class="wrap two">
+  <div>
+    <div class="sec-label">Projeto</div>
+    <h2>Encontro de Banjeiros</h2>
+    <p class="lead">Idealizado por Rodrigo, o Encontro reúne banjeiros de todos os níveis técnicos na mesma roda — do iniciante ao profissional. O objetivo é popularizar um instrumento historicamente restrito e abrir espaço para novos talentos nas casas onde Rodrigo se apresenta.</p>
+    <div class="cta-row"><a href="#" class="btn btn-ghost">Próximas edições</a><a href="#" class="btn btn-ghost">Entrar na comunidade</a></div>
+  </div>
+  <div><img src="assets/logo-encontro.jpg" alt="Encontro de Banjeiros Rodrigo Morelli" style="width:100%;max-width:400px;margin:0 auto"></div>
+</div></section>
+
+<!-- MUSICA -->
+<section id="musica"><div class="wrap">
+  <div class="sec-label">Obra</div>
+  <h2>Música</h2>
+  <p class="lead">Sete discos, mais de 450 composições e obras gravadas por Bira Hawaii, Délcio Luiz, Milton Manhães e Chiquinho dos Santos.</p>
+  <div class="discos">
+    <img src="assets/capa-patrimonio.jpg" alt="Meu Patrimônio">
+    <img src="assets/capa-novoclima.jpg" alt="Grupo Novo Clima">
+    <img src="assets/pezinho.jpg" alt="Pagode do Pezinho">
+    <div class="empty">Canta Fundo de Quintal</div>
+    <div class="empty">Audiovisual 2026</div>
+  </div>
+  <div class="cta-row" style="margin-top:34px"><a href="#" class="btn btn-ghost">Discografia completa</a><a href="#" class="btn btn-ghost">Ouvir no Spotify</a></div>
+</div></section>
+
+<!-- PATROCINADORES -->
+<section><div class="wrap">
+  <div class="sec-label">Parceiros oficiais</div>
+  <div class="sponsors">
+    <div><img src="assets/sp-irineu.jpg" alt="Luthieria Irineu"></div>
+    <div><img src="assets/sp-schaffiman.png" alt="Captadores Schaffiman"></div>
+    <div><img src="assets/sp-contemporanea.png" alt="Contemporânea"></div>
+    <div style="color:#4a4a4a;font-size:11px;letter-spacing:.14em;text-transform:uppercase">V Stuners<br><span style="font-size:9px">logo pendente</span></div>
+  </div>
+</div></section>
+
+<footer id="contato"><div class="wrap">
+  <div class="f-grid">
+    <div>
+      <img src="assets/logo.jpg" alt="Rodrigo Morelli" style="height:40px;margin-bottom:20px">
+      <h4>Receba aulas grátis</h4>
+      <p style="color:var(--muted2);font-size:14px">Toda semana, uma dica de banjo direto no seu e-mail.</p>
+      <div class="news"><input placeholder="seu@email.com"><a href="#" class="btn">Quero</a></div>
+    </div>
+    <div><h4>Loja</h4><ul><li>Banjos</li><li>Acessórios</li><li>Regulagem</li><li>Rastrear pedido</li><li>Trocas e devoluções</li></ul></div>
+    <div><h4>Contato</h4><ul><li>Shows e contratações</li><li>[e-mail comercial]</li><li>[WhatsApp]</li><li>São Paulo — SP</li></ul></div>
+    <div><h4>Redes</h4><ul><li>Instagram</li><li>YouTube</li><li>Spotify</li><li>Comunidade WhatsApp</li></ul></div>
+  </div>
+  <div class="f-bottom"><span>© 2026 Rodrigo Morelli · CNPJ [ — ]</span><span>O BANJO TEM UM NOME.</span></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on');
+}));
+</script>
+</body>
+</html>
