@@ -2,7 +2,7 @@
 
 Protótipo navegável do site de Rodrigo Morelli: músico, compositor, instrumentista e referência nacional em banjo.
 
-**Ver online:** https://SEU-USUARIO.github.io/site-rodrigomorelli
+**Ver online:** https://producaorodrigomorelli-art.github.io/site-rodrigomorelli
 
 ## O que é isto
 
